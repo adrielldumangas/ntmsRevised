@@ -1,0 +1,191 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+NTMS_Revised
+</name>
+</assembly>
+<members>
+<member name="T:NTMS_Revised.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:NTMS_Revised.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:NTMS_Revised.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.DriverInfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.FareDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.RouteDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.ScheduleDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.UserCredentialDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.VehicleDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.DriverInfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.FareRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.RouteRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.ScheduleRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.UserCredentialRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.VehicleRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.DriverInfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.FareRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.RouteRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.ScheduleRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.UserCredentialRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSet.VehicleRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.DriverInfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.FareTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.RouteTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.ScheduleTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.UserCredentialTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.VehicleTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(NTMS_Revised.ntmsDBDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(NTMS_Revised.ntmsDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(NTMS_Revised.ntmsDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.UpdateAll(NTMS_Revised.ntmsDBDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:NTMS_Revised.ntmsDBDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>
