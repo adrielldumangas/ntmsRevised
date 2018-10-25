@@ -18,7 +18,7 @@
 
     Public Sub LoadGrid(Optional Query As String = "")
         If Query = "" Then
-            SQL.ExecQuery("SELECT DepartureDate AS Date, DepartureTime AS Time, Route AS Destination, VehicleType AS Vehicle, Fare, PlateNo AS 'Plate_No.', Driver FROM Schedule;")
+            SQL.ExecQuery("SELECT Route AS Destination, VehicleType AS Vehicle,  DepartureTime AS Time, Fare, PlateNo AS 'Plate_No.', Driver, Status FROM Schedule;")
         Else
             Sql.ExecQuery(Query)
         End If

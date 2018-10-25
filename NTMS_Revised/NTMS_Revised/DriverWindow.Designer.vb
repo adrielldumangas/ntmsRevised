@@ -42,6 +42,8 @@ Partial Class DriverWindow
         Me.dgv_driver = New System.Windows.Forms.DataGridView()
         Me.search_txtbx = New System.Windows.Forms.TextBox()
         Me.search_btn = New System.Windows.Forms.Button()
+        Me.licenseNum_txtbx = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_driver, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +82,7 @@ Partial Class DriverWindow
         Me.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.save_btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.save_btn.ForeColor = System.Drawing.Color.Black
-        Me.save_btn.Location = New System.Drawing.Point(16, 174)
+        Me.save_btn.Location = New System.Drawing.Point(203, 121)
         Me.save_btn.Name = "save_btn"
         Me.save_btn.Size = New System.Drawing.Size(109, 32)
         Me.save_btn.TabIndex = 38
@@ -204,7 +206,10 @@ Partial Class DriverWindow
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.address_txtbx)
+        Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.bday_picker)
+        Me.Panel1.Controls.Add(Me.licenseNum_txtbx)
+        Me.Panel1.Controls.Add(Me.save_btn)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -215,7 +220,7 @@ Partial Class DriverWindow
         Me.Panel1.Controls.Add(Me.lastname_txtbx)
         Me.Panel1.Location = New System.Drawing.Point(7, 56)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(598, 118)
+        Me.Panel1.Size = New System.Drawing.Size(598, 161)
         Me.Panel1.TabIndex = 41
         '
         'ErrorProvider1
@@ -238,7 +243,7 @@ Partial Class DriverWindow
         Me.search_txtbx.BackColor = System.Drawing.SystemColors.Window
         Me.search_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.search_txtbx.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.search_txtbx.Location = New System.Drawing.Point(15, 228)
+        Me.search_txtbx.Location = New System.Drawing.Point(305, 228)
         Me.search_txtbx.Name = "search_txtbx"
         Me.search_txtbx.Size = New System.Drawing.Size(179, 23)
         Me.search_txtbx.TabIndex = 31
@@ -251,12 +256,34 @@ Partial Class DriverWindow
         Me.search_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.search_btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.search_btn.ForeColor = System.Drawing.Color.Black
-        Me.search_btn.Location = New System.Drawing.Point(197, 223)
+        Me.search_btn.Location = New System.Drawing.Point(487, 223)
         Me.search_btn.Name = "search_btn"
         Me.search_btn.Size = New System.Drawing.Size(109, 32)
         Me.search_btn.TabIndex = 38
         Me.search_btn.Text = "Search"
         Me.search_btn.UseVisualStyleBackColor = False
+        '
+        'licenseNum_txtbx
+        '
+        Me.licenseNum_txtbx.BackColor = System.Drawing.SystemColors.Window
+        Me.licenseNum_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.licenseNum_txtbx.Enabled = False
+        Me.licenseNum_txtbx.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.licenseNum_txtbx.Location = New System.Drawing.Point(8, 130)
+        Me.licenseNum_txtbx.Name = "licenseNum_txtbx"
+        Me.licenseNum_txtbx.Size = New System.Drawing.Size(179, 23)
+        Me.licenseNum_txtbx.TabIndex = 31
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(6, 110)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(110, 17)
+        Me.Label7.TabIndex = 34
+        Me.Label7.Text = "License Number"
         '
         'DriverWindow
         '
@@ -264,12 +291,11 @@ Partial Class DriverWindow
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(609, 479)
-        Me.Controls.Add(Me.dgv_driver)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.dgv_driver)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.newDriver_btn)
         Me.Controls.Add(Me.search_btn)
-        Me.Controls.Add(Me.save_btn)
         Me.Controls.Add(Me.search_txtbx)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "DriverWindow"
@@ -302,4 +328,6 @@ Partial Class DriverWindow
     Friend WithEvents dgv_driver As DataGridView
     Friend WithEvents search_txtbx As TextBox
     Friend WithEvents search_btn As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents licenseNum_txtbx As TextBox
 End Class

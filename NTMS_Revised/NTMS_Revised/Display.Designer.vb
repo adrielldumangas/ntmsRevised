@@ -25,13 +25,16 @@ Partial Class Display
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Display))
         Me.dgv_display = New System.Windows.Forms.DataGridView()
         Me.time_lbl = New System.Windows.Forms.Label()
         Me.day_lbl = New System.Windows.Forms.Label()
         Me.date_lbl = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dgv_display, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv_display
@@ -48,7 +51,7 @@ Partial Class Display
         Me.dgv_display.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -65,24 +68,24 @@ Partial Class Display
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgv_display.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_display.GridColor = System.Drawing.SystemColors.MenuHighlight
-        Me.dgv_display.Location = New System.Drawing.Point(31, 118)
+        Me.dgv_display.Location = New System.Drawing.Point(42, 118)
         Me.dgv_display.Margin = New System.Windows.Forms.Padding(10, 10, 10, 50)
         Me.dgv_display.Name = "dgv_display"
         Me.dgv_display.ReadOnly = True
         Me.dgv_display.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgv_display.RowHeadersVisible = False
-        Me.dgv_display.Size = New System.Drawing.Size(1201, 544)
+        Me.dgv_display.Size = New System.Drawing.Size(1179, 534)
         Me.dgv_display.TabIndex = 0
         '
         'time_lbl
         '
         Me.time_lbl.AutoSize = True
         Me.time_lbl.BackColor = System.Drawing.Color.Transparent
-        Me.time_lbl.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.time_lbl.Location = New System.Drawing.Point(989, 29)
+        Me.time_lbl.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.time_lbl.Location = New System.Drawing.Point(957, 19)
         Me.time_lbl.Margin = New System.Windows.Forms.Padding(3, 10, 10, 0)
         Me.time_lbl.Name = "time_lbl"
-        Me.time_lbl.Size = New System.Drawing.Size(236, 44)
+        Me.time_lbl.Size = New System.Drawing.Size(304, 56)
         Me.time_lbl.TabIndex = 1
         Me.time_lbl.Text = "00:00:00 AM"
         '
@@ -90,11 +93,11 @@ Partial Class Display
         '
         Me.day_lbl.AutoSize = True
         Me.day_lbl.BackColor = System.Drawing.Color.Transparent
-        Me.day_lbl.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.day_lbl.Location = New System.Drawing.Point(377, 29)
+        Me.day_lbl.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.day_lbl.Location = New System.Drawing.Point(345, 19)
         Me.day_lbl.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.day_lbl.Name = "day_lbl"
-        Me.day_lbl.Size = New System.Drawing.Size(232, 44)
+        Me.day_lbl.Size = New System.Drawing.Size(303, 56)
         Me.day_lbl.TabIndex = 2
         Me.day_lbl.Text = "Wednesday"
         '
@@ -102,11 +105,11 @@ Partial Class Display
         '
         Me.date_lbl.AutoSize = True
         Me.date_lbl.BackColor = System.Drawing.Color.Transparent
-        Me.date_lbl.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.date_lbl.Location = New System.Drawing.Point(680, 29)
+        Me.date_lbl.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.date_lbl.Location = New System.Drawing.Point(648, 19)
         Me.date_lbl.Margin = New System.Windows.Forms.Padding(3, 10, 3, 0)
         Me.date_lbl.Name = "date_lbl"
-        Me.date_lbl.Size = New System.Drawing.Size(230, 44)
+        Me.date_lbl.Size = New System.Drawing.Size(296, 56)
         Me.date_lbl.TabIndex = 3
         Me.date_lbl.Text = "01 Jan 2018"
         '
@@ -126,12 +129,22 @@ Partial Class Display
         '
         Me.Timer1.Enabled = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(956, 659)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(296, 59)
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
         'Display
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
         Me.ClientSize = New System.Drawing.Size(1264, 721)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.time_lbl)
         Me.Controls.Add(Me.day_lbl)
         Me.Controls.Add(Me.date_lbl)
@@ -142,6 +155,7 @@ Partial Class Display
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Display"
         CType(Me.dgv_display, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -153,4 +167,5 @@ Partial Class Display
     Friend WithEvents date_lbl As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

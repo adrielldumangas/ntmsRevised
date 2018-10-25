@@ -21,13 +21,9 @@
         middlename_txtbx.Enabled = False
         bday_picker.Enabled = False
         address_txtbx.Enabled = False
+        licenseNum_txtbx.Enabled = False
         save_btn.Enabled = False
         newDriver_btn.Enabled = True
-
-        lastname_txtbx.Clear()
-        firstname_txtbx.Clear()
-        middlename_txtbx.Clear()
-        address_txtbx.Clear()
 
     End Sub
 
@@ -37,6 +33,7 @@
         middlename_txtbx.Enabled = True
         bday_picker.Enabled = True
         address_txtbx.Enabled = True
+        licenseNum_txtbx.Enabled = True
         save_btn.Enabled = True
         newDriver_btn.Enabled = False
     End Sub
@@ -48,9 +45,10 @@
         Sql.AddParam("@middlename", middlename_txtbx.Text)
         Sql.AddParam("@birthdate", bday_picker.Text)
         SQL.AddParam("@address", address_txtbx.Text)
+        SQL.AddParam("@license", licenseNum_txtbx.Text)
 
-        SQL.ExecQuery("INSERT INTO DriverInfo (LastName,FirstName,MiddleName,BirthDate,Address) " &
-                      "VALUES (@lastname,@firstname,@middlename,@birthdate,@address);")
+        SQL.ExecQuery("INSERT INTO DriverInfo (LastName,FirstName,MiddleName,BirthDate,Address,LicenseNum) " &
+                      "VALUES (@lastname,@firstname,@middlename,@birthdate,@address,@license);")
 
         ' REPORT & ABORT ON ERRORS
         If Sql.HasException(True) Then Exit Sub
@@ -64,7 +62,8 @@
         If String.IsNullOrWhiteSpace(lastname_txtbx.Text) Or
             String.IsNullOrWhiteSpace(firstname_txtbx.Text) Or
             String.IsNullOrWhiteSpace(middlename_txtbx.Text) Or
-            String.IsNullOrWhiteSpace(address_txtbx.Text) Then
+            String.IsNullOrWhiteSpace(address_txtbx.Text) Or
+            String.IsNullOrWhiteSpace(licenseNum_txtbx.Text) Then
 
             For Each tb As TextBox In Panel1.Controls.OfType(Of TextBox)()
                 If String.IsNullOrWhiteSpace(tb.Text) Then
@@ -85,7 +84,7 @@
     Private Sub FindDriver()
         SQL.AddParam("@driver", "%" & search_txtbx.Text & "%")
 
-        LoadGrid("SELECT * FROM DriverInfo WHERE LastName LIKE @driver OR FirstName LIKE @driver;")
+        LoadGrid("SELECT * FROM DriverInfo WHERE LastName LIKE @driver OR FirstName LIKE @driver OR LicenseNum LIKE @driver;")
     End Sub
 
     Private Sub DriverWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
