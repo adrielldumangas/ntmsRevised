@@ -23,9 +23,11 @@ Partial Class Display
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Display))
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgv_display = New System.Windows.Forms.DataGridView()
         Me.time_lbl = New System.Windows.Forms.Label()
         Me.day_lbl = New System.Windows.Forms.Label()
@@ -33,8 +35,11 @@ Partial Class Display
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.showDisplay_timer = New System.Windows.Forms.Timer(Me.components)
+        Me.dgv_display2 = New System.Windows.Forms.DataGridView()
         CType(Me.dgv_display, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_display2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv_display
@@ -49,32 +54,32 @@ Partial Class Display
         Me.dgv_display.CausesValidation = False
         Me.dgv_display.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.dgv_display.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_display.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_display.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgv_display.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_display.Cursor = System.Windows.Forms.Cursors.Arrow
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_display.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_display.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgv_display.GridColor = System.Drawing.SystemColors.MenuHighlight
-        Me.dgv_display.Location = New System.Drawing.Point(42, 118)
+        Me.dgv_display.Location = New System.Drawing.Point(29, 118)
         Me.dgv_display.Margin = New System.Windows.Forms.Padding(10, 10, 10, 50)
         Me.dgv_display.Name = "dgv_display"
         Me.dgv_display.ReadOnly = True
         Me.dgv_display.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgv_display.RowHeadersVisible = False
-        Me.dgv_display.Size = New System.Drawing.Size(1179, 534)
+        Me.dgv_display.Size = New System.Drawing.Size(1209, 534)
         Me.dgv_display.TabIndex = 0
         '
         'time_lbl
@@ -138,12 +143,58 @@ Partial Class Display
         Me.PictureBox1.TabIndex = 5
         Me.PictureBox1.TabStop = False
         '
+        'showDisplay_timer
+        '
+        Me.showDisplay_timer.Enabled = True
+        Me.showDisplay_timer.Interval = 5000
+        '
+        'dgv_display2
+        '
+        Me.dgv_display2.AllowUserToAddRows = False
+        Me.dgv_display2.AllowUserToDeleteRows = False
+        Me.dgv_display2.AllowUserToResizeColumns = False
+        Me.dgv_display2.AllowUserToResizeRows = False
+        Me.dgv_display2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.dgv_display2.BackgroundColor = System.Drawing.SystemColors.Highlight
+        Me.dgv_display2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgv_display2.CausesValidation = False
+        Me.dgv_display2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.dgv_display2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_display2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgv_display2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_display2.Cursor = System.Windows.Forms.Cursors.Arrow
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_display2.DefaultCellStyle = DataGridViewCellStyle12
+        Me.dgv_display2.GridColor = System.Drawing.SystemColors.MenuHighlight
+        Me.dgv_display2.Location = New System.Drawing.Point(29, 118)
+        Me.dgv_display2.Margin = New System.Windows.Forms.Padding(10, 10, 10, 50)
+        Me.dgv_display2.Name = "dgv_display2"
+        Me.dgv_display2.ReadOnly = True
+        Me.dgv_display2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgv_display2.RowHeadersVisible = False
+        Me.dgv_display2.Size = New System.Drawing.Size(1209, 534)
+        Me.dgv_display2.TabIndex = 6
+        '
         'Display
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Highlight
         Me.ClientSize = New System.Drawing.Size(1264, 721)
+        Me.Controls.Add(Me.dgv_display2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.time_lbl)
         Me.Controls.Add(Me.day_lbl)
@@ -151,11 +202,13 @@ Partial Class Display
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgv_display)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Display"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Display"
         CType(Me.dgv_display, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_display2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -168,4 +221,6 @@ Partial Class Display
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents showDisplay_timer As Timer
+    Friend WithEvents dgv_display2 As DataGridView
 End Class

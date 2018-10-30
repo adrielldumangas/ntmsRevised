@@ -31,6 +31,7 @@ Partial Class MainWindow
         Me.firstName_label = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cancel_btn = New System.Windows.Forms.Button()
         Me.dateTime_lbl = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -111,6 +112,7 @@ Partial Class MainWindow
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.cancel_btn)
         Me.Panel1.Controls.Add(Me.dateTime_lbl)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label4)
@@ -124,6 +126,22 @@ Partial Class MainWindow
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 480)
         Me.Panel1.TabIndex = 1
+        '
+        'cancel_btn
+        '
+        Me.cancel_btn.BackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.FlatAppearance.BorderSize = 0
+        Me.cancel_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cancel_btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cancel_btn.ForeColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.Location = New System.Drawing.Point(12, 404)
+        Me.cancel_btn.Name = "cancel_btn"
+        Me.cancel_btn.Size = New System.Drawing.Size(101, 31)
+        Me.cancel_btn.TabIndex = 53
+        Me.cancel_btn.Text = "Logout"
+        Me.cancel_btn.UseVisualStyleBackColor = False
         '
         'dateTime_lbl
         '
@@ -241,7 +259,8 @@ Partial Class MainWindow
         Me.Controls.Add(Me.viewTrips_btn)
         Me.Controls.Add(Me.newSched_btn)
         Me.Controls.Add(Me.addDriver_btn)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximizeBox = False
         Me.Name = "MainWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NTMS"
@@ -266,4 +285,5 @@ Partial Class MainWindow
     Friend WithEvents viewTrips_btn As Button
     Friend WithEvents newSched_btn As Button
     Friend WithEvents addDriver_btn As Button
+    Friend WithEvents cancel_btn As Button
 End Class

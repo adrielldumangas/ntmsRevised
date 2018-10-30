@@ -6,6 +6,8 @@
         For Each cb As ComboBox In Panel1.Controls.OfType(Of ComboBox)()
             cb.Text = ""
         Next
+        time_cb.Clear()
+        plateNum_cb.Clear()
     End Sub
 
 
@@ -21,14 +23,74 @@
         If SQL.HasException(True) Then Exit Sub
 
     End Sub
+
     Public Sub LoadTravelNum()
         travelNum_txtbx.Text = Now.ToString("yyyyddMM") & "-" & "00" & count.ToString()
     End Sub
+
     Private Sub NewSchedule_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadGrid()
-
         LoadTravelNum()
+        LoadDriverCBx()
+        LoadRouteCBx()
+        LoadFareCBx()
+        LoadVehicleCBx()
+    End Sub
 
+    Private Sub LoadDriverCBx()
+        ' REFRESH COMBOBOX
+        driver_cb.Items.Clear()
+
+        ' RUN QUERY
+        SQL.ExecQuery("SELECT LastName FROM DriverInfo;")
+
+        If SQL.HasException(True) Then Exit Sub
+        ' LOOP ROW & ADD TO COMBOBOX
+        For Each row As DataRow In SQL.DBDT.Rows
+            driver_cb.Items.Add(row("LastName").ToString)
+        Next
+    End Sub
+
+    Private Sub LoadRouteCBx()
+        ' REFRESH COMBOBOX
+        route_cb.Items.Clear()
+
+        ' RUN QUERY
+        SQL.ExecQuery("SELECT DISTINCT Route FROM Schedule;")
+
+        If SQL.HasException(True) Then Exit Sub
+        ' LOOP ROW & ADD TO COMBOBOX
+        For Each row As DataRow In SQL.DBDT.Rows
+            route_cb.Items.Add(row("Route").ToString)
+        Next
+    End Sub
+
+    Private Sub LoadFareCBx()
+        ' REFRESH COMBOBOX
+        fare_cb.Items.Clear()
+
+        ' RUN QUERY
+        SQL.ExecQuery("SELECT DISTINCT Fare FROM Schedule;")
+
+        If SQL.HasException(True) Then Exit Sub
+        ' LOOP ROW & ADD TO COMBOBOX
+        For Each row As DataRow In SQL.DBDT.Rows
+            fare_cb.Items.Add(row("Fare").ToString)
+        Next
+    End Sub
+
+    Private Sub LoadVehicleCBx()
+        ' REFRESH COMBOBOX
+        vehicleType_cb.Items.Clear()
+
+        ' RUN QUERY
+        SQL.ExecQuery("SELECT DISTINCT VehicleType FROM Schedule;")
+
+        If SQL.HasException(True) Then Exit Sub
+        ' LOOP ROW & ADD TO COMBOBOX
+        For Each row As DataRow In SQL.DBDT.Rows
+            vehicleType_cb.Items.Add(row("VehicleType").ToString)
+        Next
     End Sub
 
     Private Sub InsertInfo()
@@ -42,7 +104,7 @@
         SQL.AddParam("@platenum", plateNum_cb.Text)
         SQL.AddParam("@driver", driver_cb.Text)
 
-        SQL.ExecQuery("INSERT INTO Schedule (TravelNumber,DepartureDate,DepartureTime,Route,VehicleType,Fare,PlateNo,Driver) " &
+        SQL.ExecQuery("INSERT INTO Schedule (TravelNumber,DepartureDate,DepartureTime,Route,VehicleType,Fare,PlateNumber,Driver) " &
                       "VALUES (@travelnum,@deptdate,@depttime,@route,@vehicletype,@fare,@platenum,@driver);")
 
         ' REPORT & ABORT ON ERRORS
@@ -77,5 +139,9 @@
         End If
 
 
+    End Sub
+
+    Private Sub cancel_btn_Click(sender As Object, e As EventArgs) Handles cancel_btn.Click
+        Close()
     End Sub
 End Class

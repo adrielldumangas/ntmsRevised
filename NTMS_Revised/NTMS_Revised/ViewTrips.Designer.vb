@@ -43,6 +43,8 @@ Partial Class ViewTrips
         Me.fare_txtbx = New System.Windows.Forms.TextBox()
         Me.status_cb = New System.Windows.Forms.ComboBox()
         Me.trip_lb = New System.Windows.Forms.ListBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cancel_btn = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +53,7 @@ Partial Class ViewTrips
         Me.search_txtbx.BackColor = System.Drawing.SystemColors.Window
         Me.search_txtbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.search_txtbx.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.search_txtbx.Location = New System.Drawing.Point(47, 16)
+        Me.search_txtbx.Location = New System.Drawing.Point(47, 42)
         Me.search_txtbx.Name = "search_txtbx"
         Me.search_txtbx.Size = New System.Drawing.Size(179, 23)
         Me.search_txtbx.TabIndex = 43
@@ -145,9 +147,9 @@ Partial Class ViewTrips
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(18, 153)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 17)
+        Me.Label5.Size = New System.Drawing.Size(97, 17)
         Me.Label5.TabIndex = 48
-        Me.Label5.Text = "Plate No."
+        Me.Label5.Text = "Plate Number"
         '
         'Label2
         '
@@ -283,10 +285,37 @@ Partial Class ViewTrips
         'trip_lb
         '
         Me.trip_lb.FormattingEnabled = True
-        Me.trip_lb.Location = New System.Drawing.Point(47, 51)
+        Me.trip_lb.Location = New System.Drawing.Point(47, 77)
         Me.trip_lb.Name = "trip_lb"
-        Me.trip_lb.Size = New System.Drawing.Size(179, 407)
+        Me.trip_lb.Size = New System.Drawing.Size(179, 355)
         Me.trip_lb.TabIndex = 52
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(44, 16)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(76, 17)
+        Me.Label4.TabIndex = 48
+        Me.Label4.Text = "Search Trip"
+        '
+        'cancel_btn
+        '
+        Me.cancel_btn.BackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.FlatAppearance.BorderSize = 0
+        Me.cancel_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cancel_btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cancel_btn.ForeColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.Location = New System.Drawing.Point(85, 438)
+        Me.cancel_btn.Name = "cancel_btn"
+        Me.cancel_btn.Size = New System.Drawing.Size(101, 31)
+        Me.cancel_btn.TabIndex = 53
+        Me.cancel_btn.Text = "Cancel"
+        Me.cancel_btn.UseVisualStyleBackColor = False
         '
         'ViewTrips
         '
@@ -294,10 +323,13 @@ Partial Class ViewTrips
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(609, 479)
+        Me.Controls.Add(Me.cancel_btn)
         Me.Controls.Add(Me.trip_lb)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.search_txtbx)
+        Me.Controls.Add(Me.Label4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "ViewTrips"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "View / Manage Trips"
@@ -327,4 +359,6 @@ Partial Class ViewTrips
     Friend WithEvents status_cb As ComboBox
     Friend WithEvents fare_txtbx As TextBox
     Friend WithEvents trip_lb As ListBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cancel_btn As Button
 End Class

@@ -26,7 +26,6 @@ Partial Class NewSchedule
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewSchedule))
         Me.driver_cb = New System.Windows.Forms.ComboBox()
         Me.route_cb = New System.Windows.Forms.ComboBox()
-        Me.time_cb = New System.Windows.Forms.ComboBox()
         Me.fare_cb = New System.Windows.Forms.ComboBox()
         Me.vehicleType_cb = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,9 +40,11 @@ Partial Class NewSchedule
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.plateNum_cb = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.time_cb = New System.Windows.Forms.TextBox()
+        Me.plateNum_cb = New System.Windows.Forms.TextBox()
+        Me.cancel_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,7 +57,7 @@ Partial Class NewSchedule
         Me.driver_cb.Location = New System.Drawing.Point(17, 300)
         Me.driver_cb.Name = "driver_cb"
         Me.driver_cb.Size = New System.Drawing.Size(200, 25)
-        Me.driver_cb.TabIndex = 7
+        Me.driver_cb.TabIndex = 8
         '
         'route_cb
         '
@@ -66,17 +67,7 @@ Partial Class NewSchedule
         Me.route_cb.Location = New System.Drawing.Point(17, 243)
         Me.route_cb.Name = "route_cb"
         Me.route_cb.Size = New System.Drawing.Size(200, 25)
-        Me.route_cb.TabIndex = 6
-        '
-        'time_cb
-        '
-        Me.time_cb.BackColor = System.Drawing.Color.AliceBlue
-        Me.time_cb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.time_cb.FormattingEnabled = True
-        Me.time_cb.Location = New System.Drawing.Point(138, 75)
-        Me.time_cb.Name = "time_cb"
-        Me.time_cb.Size = New System.Drawing.Size(80, 25)
-        Me.time_cb.TabIndex = 2
+        Me.route_cb.TabIndex = 7
         '
         'fare_cb
         '
@@ -87,7 +78,7 @@ Partial Class NewSchedule
         Me.fare_cb.Location = New System.Drawing.Point(138, 130)
         Me.fare_cb.Name = "fare_cb"
         Me.fare_cb.Size = New System.Drawing.Size(80, 25)
-        Me.fare_cb.TabIndex = 4
+        Me.fare_cb.TabIndex = 5
         '
         'vehicleType_cb
         '
@@ -97,7 +88,7 @@ Partial Class NewSchedule
         Me.vehicleType_cb.Location = New System.Drawing.Point(17, 130)
         Me.vehicleType_cb.Name = "vehicleType_cb"
         Me.vehicleType_cb.Size = New System.Drawing.Size(106, 25)
-        Me.vehicleType_cb.TabIndex = 3
+        Me.vehicleType_cb.TabIndex = 4
         '
         'Label6
         '
@@ -119,10 +110,10 @@ Partial Class NewSchedule
         Me.save_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.save_btn.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.save_btn.ForeColor = System.Drawing.Color.AliceBlue
-        Me.save_btn.Location = New System.Drawing.Point(55, 371)
+        Me.save_btn.Location = New System.Drawing.Point(55, 354)
         Me.save_btn.Name = "save_btn"
         Me.save_btn.Size = New System.Drawing.Size(109, 48)
-        Me.save_btn.TabIndex = 8
+        Me.save_btn.TabIndex = 9
         Me.save_btn.Text = "Save"
         Me.save_btn.UseVisualStyleBackColor = False
         '
@@ -133,7 +124,7 @@ Partial Class NewSchedule
         Me.depart_date_picker.Location = New System.Drawing.Point(17, 77)
         Me.depart_date_picker.Name = "depart_date_picker"
         Me.depart_date_picker.Size = New System.Drawing.Size(106, 23)
-        Me.depart_date_picker.TabIndex = 1
+        Me.depart_date_picker.TabIndex = 2
         '
         'Label7
         '
@@ -177,7 +168,7 @@ Partial Class NewSchedule
         Me.travelNum_txtbx.Location = New System.Drawing.Point(17, 22)
         Me.travelNum_txtbx.Name = "travelNum_txtbx"
         Me.travelNum_txtbx.Size = New System.Drawing.Size(106, 23)
-        Me.travelNum_txtbx.TabIndex = 31
+        Me.travelNum_txtbx.TabIndex = 1
         Me.travelNum_txtbx.TabStop = False
         '
         'Label10
@@ -220,9 +211,9 @@ Partial Class NewSchedule
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(14, 168)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 17)
+        Me.Label5.Size = New System.Drawing.Size(97, 17)
         Me.Label5.TabIndex = 48
-        Me.Label5.Text = "Plate No."
+        Me.Label5.Text = "Plate Number"
         '
         'Label9
         '
@@ -235,16 +226,6 @@ Partial Class NewSchedule
         Me.Label9.TabIndex = 46
         Me.Label9.Text = "Vehicle Type"
         '
-        'plateNum_cb
-        '
-        Me.plateNum_cb.BackColor = System.Drawing.Color.AliceBlue
-        Me.plateNum_cb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.plateNum_cb.FormattingEnabled = True
-        Me.plateNum_cb.Location = New System.Drawing.Point(17, 188)
-        Me.plateNum_cb.Name = "plateNum_cb"
-        Me.plateNum_cb.Size = New System.Drawing.Size(200, 25)
-        Me.plateNum_cb.TabIndex = 6
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
@@ -254,9 +235,7 @@ Partial Class NewSchedule
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.driver_cb)
-        Me.Panel1.Controls.Add(Me.plateNum_cb)
         Me.Panel1.Controls.Add(Me.route_cb)
-        Me.Panel1.Controls.Add(Me.time_cb)
         Me.Panel1.Controls.Add(Me.fare_cb)
         Me.Panel1.Controls.Add(Me.vehicleType_cb)
         Me.Panel1.Controls.Add(Me.save_btn)
@@ -264,6 +243,8 @@ Partial Class NewSchedule
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.plateNum_cb)
+        Me.Panel1.Controls.Add(Me.time_cb)
         Me.Panel1.Controls.Add(Me.travelNum_txtbx)
         Me.Panel1.Location = New System.Drawing.Point(31, 40)
         Me.Panel1.Name = "Panel1"
@@ -274,15 +255,53 @@ Partial Class NewSchedule
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'time_cb
+        '
+        Me.time_cb.BackColor = System.Drawing.Color.AliceBlue
+        Me.time_cb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.time_cb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.time_cb.Location = New System.Drawing.Point(138, 77)
+        Me.time_cb.Name = "time_cb"
+        Me.time_cb.Size = New System.Drawing.Size(80, 23)
+        Me.time_cb.TabIndex = 3
+        '
+        'plateNum_cb
+        '
+        Me.plateNum_cb.BackColor = System.Drawing.Color.AliceBlue
+        Me.plateNum_cb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.plateNum_cb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.plateNum_cb.Location = New System.Drawing.Point(17, 188)
+        Me.plateNum_cb.Name = "plateNum_cb"
+        Me.plateNum_cb.Size = New System.Drawing.Size(200, 23)
+        Me.plateNum_cb.TabIndex = 6
+        '
+        'cancel_btn
+        '
+        Me.cancel_btn.BackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.FlatAppearance.BorderSize = 0
+        Me.cancel_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cancel_btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cancel_btn.ForeColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.Location = New System.Drawing.Point(90, 455)
+        Me.cancel_btn.Name = "cancel_btn"
+        Me.cancel_btn.Size = New System.Drawing.Size(101, 31)
+        Me.cancel_btn.TabIndex = 52
+        Me.cancel_btn.Text = "Cancel"
+        Me.cancel_btn.UseVisualStyleBackColor = False
+        '
         'NewSchedule
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(284, 491)
+        Me.Controls.Add(Me.cancel_btn)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label6)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "NewSchedule"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Schedule"
@@ -296,7 +315,6 @@ Partial Class NewSchedule
 
     Friend WithEvents driver_cb As ComboBox
     Friend WithEvents route_cb As ComboBox
-    Friend WithEvents time_cb As ComboBox
     Friend WithEvents fare_cb As ComboBox
     Friend WithEvents vehicleType_cb As ComboBox
     Friend WithEvents Label6 As Label
@@ -311,7 +329,9 @@ Partial Class NewSchedule
     Friend WithEvents Label2 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents plateNum_cb As ComboBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents time_cb As TextBox
+    Friend WithEvents plateNum_cb As TextBox
+    Friend WithEvents cancel_btn As Button
 End Class

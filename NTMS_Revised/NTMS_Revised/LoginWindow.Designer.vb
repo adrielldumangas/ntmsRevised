@@ -159,6 +159,7 @@ Partial Class LoginWindow
         Me.Controls.Add(Me.password_txtbx)
         Me.Controls.Add(Me.username_txtbx)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "LoginWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"

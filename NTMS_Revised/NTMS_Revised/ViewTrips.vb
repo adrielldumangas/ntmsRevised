@@ -21,16 +21,17 @@
 
     Private Sub GetTripDetails(TravelNum As String)
         SQL.AddParam("@tripNum", TravelNum)
-        SQL.ExecQuery("SELECT TOP 1 * FROM Schedule WHERE TravelNumber = @tripNum;")
+        SQL.ExecQuery("SELECT TOP 1 *, FORMAT(DepartureTime,'hh:mm tt') AS Time, " &
+                      "FORMAT(Fare,'C', 'en-ph') AS NFare FROM Schedule WHERE TravelNumber = @tripNum;")
 
         If SQL.RecordCount < 1 Then Exit Sub
 
         For Each r As DataRow In SQL.DBDT.Rows
             travelNum_txtbx.Text = r("TravelNumber")
-            time_cb.Text = r("DepartureTime").ToString
+            time_cb.Text = r("Time").ToString
             vehicleType_cb.Text = r("VehicleType")
-            fare_txtbx.Text = r("Fare")
-            plateNum_txtbx.Text = r("PlateNo")
+            fare_txtbx.Text = r("NFare")
+            plateNum_txtbx.Text = r("PlateNumber")
             route_txtbx.Text = r("Route")
             driver_txtbx.Text = r("Driver")
             If Not IsDBNull(r("Status")) Then
@@ -74,5 +75,9 @@
     Private Sub update_btn_Click(sender As Object, e As EventArgs) Handles update_btn.Click
         UpdateTrip()
 
+    End Sub
+
+    Private Sub cancel_btn_Click(sender As Object, e As EventArgs) Handles cancel_btn.Click
+        Close()
     End Sub
 End Class

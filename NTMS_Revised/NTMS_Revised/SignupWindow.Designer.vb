@@ -42,6 +42,7 @@ Partial Class SignupWindow
         Me.firstname_txtbx = New System.Windows.Forms.TextBox()
         Me.lastname_txtbx = New System.Windows.Forms.TextBox()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.cancel_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,6 +67,7 @@ Partial Class SignupWindow
         Me.Panel1.Controls.Add(Me.middlename_txtbx)
         Me.Panel1.Controls.Add(Me.firstname_txtbx)
         Me.Panel1.Controls.Add(Me.lastname_txtbx)
+        Me.Panel1.Controls.Add(Me.cancel_btn)
         Me.Panel1.Location = New System.Drawing.Point(22, -2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(239, 500)
@@ -134,9 +136,9 @@ Partial Class SignupWindow
         Me.signUp_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.signUp_btn.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.signUp_btn.ForeColor = System.Drawing.Color.AliceBlue
-        Me.signUp_btn.Location = New System.Drawing.Point(65, 438)
+        Me.signUp_btn.Location = New System.Drawing.Point(65, 428)
         Me.signUp_btn.Name = "signUp_btn"
-        Me.signUp_btn.Size = New System.Drawing.Size(109, 48)
+        Me.signUp_btn.Size = New System.Drawing.Size(109, 33)
         Me.signUp_btn.TabIndex = 7
         Me.signUp_btn.Text = "Sign Up"
         Me.signUp_btn.UseVisualStyleBackColor = False
@@ -249,6 +251,22 @@ Partial Class SignupWindow
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'cancel_btn
+        '
+        Me.cancel_btn.BackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatAppearance.BorderColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.FlatAppearance.BorderSize = 0
+        Me.cancel_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.cancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cancel_btn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cancel_btn.ForeColor = System.Drawing.Color.AliceBlue
+        Me.cancel_btn.Location = New System.Drawing.Point(69, 460)
+        Me.cancel_btn.Name = "cancel_btn"
+        Me.cancel_btn.Size = New System.Drawing.Size(101, 32)
+        Me.cancel_btn.TabIndex = 53
+        Me.cancel_btn.Text = "Cancel"
+        Me.cancel_btn.UseVisualStyleBackColor = False
+        '
         'SignupWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -256,6 +274,7 @@ Partial Class SignupWindow
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(284, 491)
         Me.Controls.Add(Me.Panel1)
+        Me.MaximizeBox = False
         Me.Name = "SignupWindow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sign Up"
@@ -284,4 +303,5 @@ Partial Class SignupWindow
     Friend WithEvents firstname_txtbx As TextBox
     Friend WithEvents lastname_txtbx As TextBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents cancel_btn As Button
 End Class
